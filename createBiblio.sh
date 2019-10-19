@@ -3,7 +3,7 @@
 BIBFILE=$HOME/bibfile.bib
 
 if [[ $(cat bibfile.bib|grep "$1") ]];then
-    echo "eccolo"
+    echo "already present a file like that"
     exit 0
 else
     if [[ $# -gt 0 ]]; then
@@ -15,12 +15,12 @@ else
             read bool
 
             if [[ $bool == y ]]; then
-                    echo "ottimo!"
+                    echo "good!"
             else
                     pdftotext -f 1 -l 1 "$1" - |sed /bstract/q|sed /BSTRACT/q
                     echo "Write new title"
                     read title
-                    echo "ora è a posto!"
+                    echo "now it is ok!"
             fi
 
             echo "author: "$author
@@ -33,7 +33,7 @@ else
                     pdftotext -f 1 -l 1 "$1" - |sed /bstract/q|sed /BSTRACT/q
                     echo "Write new author"
                     read author
-                    echo "ora è a posto!"
+                    echo "now it is ok!"
             fi
     else
             echo "Some words from the title and the author name, please"
@@ -83,7 +83,7 @@ else
             echo "ottimo!"
     else
             vi bib
-            echo "ora è a posto!"
+            echo "now it is ok!"
     fi
 
     cat bib >> $BIBFILE

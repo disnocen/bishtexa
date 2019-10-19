@@ -21,11 +21,6 @@ grep -A15 $art $bibfile| grep file
 paper=$(grep -A15 $art $bibfile| grep file|grep -o "\{.*\}"|sed -e s/\{// -e s/\}//|head -n1|grep -o ".*pdf\:\/"|sed -e "s/\:\///")
 $editor "$(find /home/disnocen | fzf -q $paper)"
 
-# xcolors-rezza.Xresources
-# iterm-AdventureTime.Xresources
-# iterm-PencilDark.Xresources
-# xcolors-nucolors.Xresources
-# iterm-Homebrew.Xresources
 
 
 
