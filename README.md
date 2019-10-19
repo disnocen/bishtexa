@@ -2,7 +2,7 @@
 A bibtex management system in bash
 
 ## The Name
-Given the scripts are in `bash` and they manage `bibtex` files, I decided to call the repository `bishtexa` because its pronounciation resembles the word *bistecca* (steak) in Italian.
+Given that the scripts are in `bash` and they manage `bibtex` files, I decided to call the repository `bishtexa` because its pronounciation resembles the word *bistecca* (steak) in Italian.
 
 ## Goal
 To create the most lightweight method to manage the bibliography for latex files. Without leaving the terminal.
@@ -21,7 +21,7 @@ All methods to manage the papers do too much. They:
 This is in contrast with the UNIX principle. I tried to fix that.
 
 ## Content
-I assume you have a consistent method to mangage the digital papers. For example by using *last_name_leading_author_date.pdf* method, as in *nakamoto08.pdf*. For this reason you only need an easy method to build your `bibliography.bib` file and an easy method to retreive the citation when you are writing the paper. Occasionally you can forget how you saved your paper, for this reason a third script `paper.sh` is provided.
+I assume you have a consistent method to mangage the digital papers. For example by using *last_name_leading_author_date.pdf* method, as in *nakamoto08.pdf*. For this reason you only need an easy method to build your `bibliography.bib` file and an easy method to retreive the citation-keyword when you are writing the paper. Occasionally you can forget how you saved your paper, for this reason a third script `paper.sh` is provided.
 
 There are three files:
 - `createBiblio.sh` create a bib entry for a pdf; there is currently some manual work to do, mainly because pdfs have not the right metadata
