@@ -2,7 +2,7 @@
 
 BIBFILE=$HOME/bibfile.bib
 
-if [[ $(cat bibfile.bib|grep "$1") ]];then
+if [[ $(cat $BIBFILE|grep "$1") ]];then
     echo "already present a file like that"
     exit 0
 else

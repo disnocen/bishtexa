@@ -18,7 +18,9 @@ bibfile="$HOME/bibfile.bib"
 art=$(extract_from_biblio.sh)
 echo "art is " $art
 grep -A15 $art $bibfile| grep file
-paper=$(grep -A15 $art $bibfile| grep file|grep -o "\{.*\}"|sed -e s/\{// -e s/\}//|head -n1|grep -o ".*pdf\:\/"|sed -e "s/\:\///")
+paper=$(grep -A15 $art $bibfile| grep file|grep -o "\{.*\}"|sed -e s/\{//g -e s/\}//g -e s/\n//|head -n1)
+# paper=$(grep -A15 $art $bibfile| grep file|grep -o "\{.*\}"|sed -e s/\{//g -e s/\}//g -e s/\n//|head -n1|grep -o ".*pdf\:\/"|sed -e "s/\:\///")
+echo "paper is" $paper
 $editor "$(find /home/disnocen | fzf -q $paper)"
 
 
