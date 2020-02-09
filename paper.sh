@@ -19,6 +19,11 @@ art=$(extract_from_biblio.sh)
 echo "art is " $art
 grep -A15 $art $bibfile| grep file
 paper=$(grep -A15 $art $bibfile| grep file|grep -o "\{.*\}"|sed -e s/\{//g -e s/\}//g -e s/\n//|head -n1)
+
+if [[ $(echo $paper|grep \;) ]];then
+    paper=$(echo $paper|grep -o ".*pdf\;"|sed s/\;//)
+fi
+    
 # paper=$(grep -A15 $art $bibfile| grep file|grep -o "\{.*\}"|sed -e s/\{//g -e s/\}//g -e s/\n//|head -n1|grep -o ".*pdf\:\/"|sed -e "s/\:\///")
 echo "paper is" $paper
 $editor "$(find /home/disnocen | fzf -q $paper)"
